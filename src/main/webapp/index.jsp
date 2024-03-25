@@ -2,7 +2,7 @@
 
 <body>
 
-<h2>hello world with index.jsp</h2>
+<h2>hello with index.jsp</h2>
 
 </body>
 
