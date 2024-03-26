@@ -1,11 +1,11 @@
-package com.afrenaline.rush;
+package com.adrenaline.rush;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HelloController {
-    @GetMapping("/hello")
+    @GetMapping("/hello-world")
     public String sayHello() {
         return "hello_world";
     }
