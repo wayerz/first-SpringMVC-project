@@ -27,33 +27,4 @@ public class FirstController {
         return "first/goodbye";
     }
 
-    @GetMapping("/calculator")
-    public String calculator(HttpServletRequest request, Model model) {
-        String first = request.getParameter("firstDigit");
-        String second = request.getParameter("secondDigit");
-        String action = request.getParameter("action");
-        int count = 0;
-
-        int firstDigit = Integer.parseInt(first);
-        int secondDigit = Integer.parseInt(second);
-
-        switch (action) {
-            case "multiplication":
-                count = firstDigit * secondDigit;
-                break;
-            case "addition":
-                count = firstDigit + secondDigit;
-                break;
-            case "subtraction":
-                count = firstDigit - secondDigit;
-                break;
-            case "division":
-                count = firstDigit / secondDigit;
-                break;
-        }
-
-        model.addAttribute("count", Integer.toString(count));
-
-        return "calculator/calculator";
-    }
 }
