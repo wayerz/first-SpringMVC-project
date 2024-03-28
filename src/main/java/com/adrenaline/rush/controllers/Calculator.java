@@ -12,7 +12,7 @@ public class Calculator {
         int firstDigit = Integer.parseInt(request.getParameter("firstDigit"));
         int secondDigit = Integer.parseInt(request.getParameter("secondDigit"));
         String action = request.getParameter("action");
-        double count = 0;
+        double count;
 
         switch (action) {
             case "multiplication":
@@ -27,9 +27,12 @@ public class Calculator {
             case "division":
                 count = (double) firstDigit / secondDigit;
                 break;
+            default:
+                count = 0;
+                break;
         }
 
-        model.addAttribute("count", Double.toString(count));
+        model.addAttribute("count", "The result is: " + count);
 
         return "calculator/calculator";
     }
