@@ -9,13 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Calculator {
     @GetMapping("/calculator")
     public String calculator(HttpServletRequest request, Model model) {
-        String first = request.getParameter("firstDigit");
-        String second = request.getParameter("secondDigit");
+        int firstDigit = Integer.parseInt(request.getParameter("firstDigit"));
+        int secondDigit = Integer.parseInt(request.getParameter("secondDigit"));
         String action = request.getParameter("action");
         double count = 0;
-
-        int firstDigit = Integer.parseInt(first);
-        int secondDigit = Integer.parseInt(second);
 
         switch (action) {
             case "multiplication":
